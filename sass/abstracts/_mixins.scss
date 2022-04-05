@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+@mixin flex ($direction, $justify){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: center;
+}
+@mixin grid ($min-width) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    gap: 1.5em;
+    align-items: center;
+}

@@ -1,0 +1,107 @@
+@use '../abstracts/index' as *;
+
+main{
+    background: rgb(231, 231, 231);
+    text-align: center;
+    position: relative;
+}
+.shorten-link-box{
+    padding: 2em;
+    background: $DarkViolet url(#{$bg-shorten-mobile}) no-repeat top right;
+    border-radius: .5em;
+    form{
+        display: grid;
+        gap: 1em;
+    }
+    input{   
+        border-radius: .2em;
+        padding: .45em 0;
+        border: none;
+        width: 100%;
+        &[type="submit"]{
+            border: none;
+            cursor: pointer;
+            background-color: $Cyan;
+            color: #fff;
+        }
+    }
+    @media (min-width:1000px) {
+        background-image: url(#{$bg-shorten-desktop});
+        form{
+            grid-template-columns: 4fr 1fr;
+        }
+    }
+}
+// Features Section
+.main-features{
+    padding: 4em 0;
+    &__cards{
+        padding-top: 3.5em;
+        @media (min-width:1000px) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5em;
+            align-items: center;
+        }
+    }
+    // Cards
+    .card{
+        border-radius: .65em;
+        background-color: #fff;
+        @include flex(column, center);
+        margin-bottom: 4.5em;
+        img{
+            padding: 1em;
+            position: relative;
+            bottom: 2em;
+            border-radius: 50%;
+            background: $DarkViolet;
+        }
+        h2,h3{
+            color: $VeryDarkViolet;
+        }
+        h3, p{
+            width: 85%;
+            text-align: center;
+        }
+        @media(min-width:1000px){
+            h3, p{
+                text-align: start;
+            }
+        }
+    }
+    .customizable-card, .records-card{
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            top: -4.5em;
+            width: .5em;
+            height: 6em;
+            background-color: $Cyan;
+        }
+        @media (min-width:1000px){
+            &::before{
+                top: 6.5em;
+                transform: rotate(90deg);
+                left: -1em;
+                height: 1.5em;
+            }
+            top: 2em;
+        }
+   }
+   .customizable-card{
+       @media (min-width:1000px){
+        top: 4em;
+       }
+   }
+}
+// Get Started
+.main-start{
+    background: $DarkViolet url(#{$pattern-boost-mobile}) no-repeat top right;
+    color: #fff;
+    padding: 3em;
+    @media (min-width:1000px) {
+        background-image: url(#{$pattern-boost-desktop});
+    }
+}

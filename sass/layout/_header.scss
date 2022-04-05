@@ -1,0 +1,112 @@
+@use '../abstracts/index' as *;
+
+header section{
+    background-color: #fff;
+    padding-bottom: 5em;
+    h1{
+        color: $VeryDarkViolet;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo-image{
+            width: clamp(6rem, 5vw, 12rem);
+        }
+        // Mobile Design
+        #nav__links{
+            position: fixed;
+            transition: all .3s;
+            z-index: 1;
+            transform: translateY(-150%);
+            background-color: $DarkViolet;
+            border-radius: .7em;
+            top: 3em;
+            left: 1em;
+            right: 1em;
+            text-align: center;
+            &.showMenu{
+                transform: translateY(3%);
+            }
+            li{
+                color: #fff;
+                margin-bottom: 1.5em;
+                font-weight: 700;
+                .cta{
+                    padding: .7em 5em;
+                    @media (min-width:$tablet) {
+                        padding: .7em 2em;
+                    }
+                }
+            }
+            .log-in{    
+                @media (max-width:$tablet) {
+                    &::before{
+                        content: '';
+                        display: inline-block;
+                        height: .04em;
+                        opacity: .5;
+                        background-color: $Gray;
+                        width: 90%;
+                        position: relative;
+                        bottom: 1em;
+                    }
+                }
+            }
+
+            @media (min-width:$tablet) {
+                all: inherit;
+                @include flex(row, space-between);
+                width: 100%;
+                ul{
+                    display: flex;
+                    align-items: center;
+                    gap: 1.5em;
+                    &:first-of-type{
+                        margin-left: 2.2em;
+                    }
+                    li, li a:not(.cta){
+                        margin: 0;
+                        color: $Gray;
+                    }
+                }
+            }
+        }
+        // Hamburger Menu
+        #hamburger-menu{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            background: none;
+
+            #closeIcon{
+                display: none;
+            }
+            @media (min-width: $tablet) {
+                display: none;
+            }
+        }
+    }
+    // Hero Section
+    .hero{  
+        padding: 2em 0;
+        text-align: center;
+        img{
+            padding-bottom: 1em;
+            position: relative;
+            max-width: 35em;
+        }
+        p{
+            margin: 1.7em 0;
+        }
+        @media (min-width:1143px){
+            @include grid(30em);           
+            &__text{
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                text-align: start;
+            }
+        }
+    }
+}
