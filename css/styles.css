@@ -29,6 +29,12 @@ header section nav #nav__links {
 header section nav #nav__links.showMenu {
   transform: translateY(3%);
 }
+header section nav #nav__links li, header section nav #nav__links li a:not(.cta) {
+  transition: color 0.2s;
+}
+header section nav #nav__links li:hover, header section nav #nav__links li a:not(.cta):hover {
+  color: #232127 !important;
+}
 header section nav #nav__links li {
   color: #fff;
   margin-bottom: 1.5em;
@@ -92,13 +98,13 @@ header section nav #hamburger-menu #closeIcon {
   }
 }
 header section .hero {
-  padding: 2em 0;
+  padding: 2.5em 0;
   text-align: center;
 }
 header section .hero img {
   padding-bottom: 1em;
   position: relative;
-  max-width: 35em;
+  max-width: 45em;
 }
 header section .hero p {
   margin: 1.7em 0;
@@ -118,7 +124,7 @@ header section .hero p {
 }
 
 main {
-  background: #e7e7e7;
+  background: linear-gradient(360deg, #EFF1F7 93%, #fff 7%);
   text-align: center;
   position: relative;
 }
@@ -130,16 +136,16 @@ main {
 }
 .shorten-link-box form {
   display: grid;
-  gap: 1em;
+  align-items: center;
+  gap: 1.2em;
 }
 .shorten-link-box input {
   border-radius: 0.2em;
-  padding: 0.45em 0;
+  padding: 0.45em 0 0.45em 0.45em;
   border: none;
   width: 100%;
 }
 .shorten-link-box input[type=submit] {
-  border: none;
   cursor: pointer;
   background-color: #2acfcf;
   color: #fff;
@@ -257,6 +263,10 @@ footer section li:first-of-type {
 footer section li:first-of-type ~ li {
   color: #9e9aa7;
 }
+footer section li:first-of-type ~ li:hover {
+  cursor: pointer;
+  color: #2acfcf;
+}
 footer section .social {
   display: flex;
   gap: 1.5em;
@@ -337,6 +347,10 @@ form input {
   background-color: #2acfcf;
   padding: 0.5em 1.35em;
   border-radius: 2em;
+  transition: opacity 0.3s;
+}
+.cta:hover {
+  opacity: 0.4;
 }
 
 p {

@@ -46,6 +46,10 @@ form input{
     background-color: $Cyan;
     padding: 0.5em 1.35em;
     border-radius: 2em;
+    transition: opacity .3s;
+    &:hover{
+        opacity: .4;
+    }
 }
 p{
     line-height: 1.4em;

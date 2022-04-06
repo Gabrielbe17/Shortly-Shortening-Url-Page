@@ -1,7 +1,7 @@
 @use '../abstracts/index' as *;
 
 main{
-    background: rgb(231, 231, 231);
+    background: linear-gradient(360deg, #EFF1F7 93%, #fff 7%);
     text-align: center;
     position: relative;
 }
@@ -11,15 +11,15 @@ main{
     border-radius: .5em;
     form{
         display: grid;
-        gap: 1em;
+        align-items: center;
+        gap: 1.2em;
     }
     input{   
         border-radius: .2em;
-        padding: .45em 0;
+        padding: .45em 0 .45em .45em;
         border: none;
         width: 100%;
         &[type="submit"]{
-            border: none;
             cursor: pointer;
             background-color: $Cyan;
             color: #fff;

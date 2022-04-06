@@ -28,6 +28,12 @@ header section{
             &.showMenu{
                 transform: translateY(3%);
             }
+            li, li a:not(.cta){
+                transition: color .2s;
+                &:hover{
+                    color: $VeryDarkViolet !important;
+                }
+            }
             li{
                 color: #fff;
                 margin-bottom: 1.5em;
@@ -90,12 +96,12 @@ header section{
     }
     // Hero Section
     .hero{  
-        padding: 2em 0;
+        padding: 2.5em 0;
         text-align: center;
         img{
             padding-bottom: 1em;
             position: relative;
-            max-width: 35em;
+            max-width: 45em;
         }
         p{
             margin: 1.7em 0;

@@ -20,6 +20,10 @@ footer section{
     }
     li:first-of-type ~ li{
         color: $GrayishViolet;
+        &:hover{
+            cursor: pointer;
+            color:$Cyan;
+        }
     }
     // Social Icons
     .social{    
